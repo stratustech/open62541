@@ -21,7 +21,7 @@
 /bin
 m4
 /autom4te.cache
-Makefile
+# Makefile - we want this file for our build
 Makefile.in
 /stamp-h1
 /config.status
@@ -70,7 +70,7 @@ tests/check_encode
 tests/check_memory
 tests/check_namespace
 tests/coverage
-Makefile
+# Makefile - see above
 /CMakeCache.txt
 /CMakeFiles/
 /cmake_install.cmake
@@ -84,6 +84,9 @@ Makefile
 Pipfile
 Pipfile.lock
 .vscode
+**/libxml2
+debian/*
+**/staging
 
 # clangd cache
 .cache/
