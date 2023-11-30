@@ -1,14 +1,16 @@
-version = 1.3.8-1
+VERSION ?= 1.3.8-1
+
 staging = $(CURDIR)/staging
 build = $(CURDIR)/build
 
 cmake_opts = \
 	-DCMAKE_INSTALL_PREFIX=$(staging) \
-	-DCMAKE_BUILD_TYPE=Release
+	-DCMAKE_BUILD_TYPE=Release \
+	-DOPEN62541_VERSION=v$(VERSION)
 
 define control
 Package: open62541-dev
-Version: $(version)
+Version: $(VERSION)
 Architecture: amd64
 Maintainer: Stratus Technologies
 Description: OPC UA development library and header files
@@ -16,7 +18,7 @@ endef
 
 export control
 
-open62541-dev_$(version)_amd64.deb:
+open62541-dev_$(VERSION)_amd64.deb:
 	mkdir -p $(build)
 	cd $(build); cmake $(cmake_opts) ..
 	$(MAKE) -C $(build)
@@ -28,6 +30,6 @@ open62541-dev_$(version)_amd64.deb:
 clean:
 	$(RM) -r $(build)
 	$(RM) -r $(staging)
-	$(RM) open62541-dev_$(version)_amd64.deb
+	$(RM) open62541-dev_$(VERSION)_amd64.deb
 
 .PHONY: clean
