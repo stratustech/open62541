@@ -4,7 +4,7 @@ staging = $(CURDIR)/staging
 build = $(CURDIR)/build
 
 cmake_opts = \
-	-DCMAKE_INSTALL_PREFIX=$(staging) \
+	-DCMAKE_INSTALL_PREFIX=$(staging)/usr \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DOPEN62541_VERSION=v$(VERSION)
 
