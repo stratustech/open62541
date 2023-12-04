@@ -28,3 +28,13 @@ This value can be overridden from the environment as such
 Library version should include the open62541 version, a dash and a version
 extension. The extension represents a revision of these additions or any
 modifications made to the open62541 sources.
+
+## Releases
+
+Once a version of the library is built, and a package has been created, a release can be published using the github web UI.  Below is a screenshot captured during the creation of the first release.  It is expected that this build will remain static and will only need to be rebuilt if we decide to take a new release from open62541.
+
+![image info](PublishRelease.PNG)
+
+Published releases can be found in the Releases page for inclusion in the developement container.
+
+![image info](Releases.PNG)
